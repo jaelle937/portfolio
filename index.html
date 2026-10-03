@@ -440,7 +440,7 @@
     padding:0;
     font-family:inherit;
     text-decoration:none;
-    color:var(--cream);
+    color:#f7f3e8;
     box-shadow:0 -0.5cqw 1.2cqw rgba(56,69,42,.18);
     transition:transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     cursor:pointer;
@@ -477,6 +477,29 @@
     text-transform:uppercase;
     background:inherit;
     transition: background-color 0.3s ease;
+    padding: 0 0.8cqw; /* Espacement intérieur pour l'étiquette glace */
+  }
+  /* Petite étiquette à effet glace (Glassmorphism) */
+  .glass-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4cqh 1.2cqw;
+    border-radius: 12px; /* Bords arrondis esthétiques */
+    background: rgba(255, 255, 255, 0.22); /* Fond blanc translucide */
+    backdrop-filter: blur(8px); /* Effet de flou glace */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(23, 73, 13, 0.856); /* Reflet lumineux sur la bordure */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Ombre douce */
+    color: inherit;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  /* Petit effet au survol de la souris */
+  .dossier:hover .glass-label {
+    background: rgba(255, 255, 255, 0.32);
+    transform: scale(1.03);
   }
   .d1 .onglet{left:61.8cqw; width:34cqw;}
   .d2 .onglet{left:5.4cqw; width:33.3cqw;}
@@ -736,7 +759,7 @@
   .contact-section{
     position:relative;
     min-height:100vh;
-    background:linear-gradient(160deg, var(--sage) 0%, var(--olive-light) 100%);
+    background:linear-gradient(160deg, #4b5537 0%, var(--olive-light) 100%);
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -777,14 +800,14 @@
     font-family: var(--font-script);
     font-size: 7cqw;
     line-height: 1;
-    color: var(--forest);
+    color: #0d1801;
     margin-top: -0.8cqh;
   }
 
   .contact-separateur {
     width: 2.5px;
     height: 22cqh;
-    background-color: var(--forest);
+    background-color:#0d1801;
     opacity: 0.4;
     border-radius: 2px;
   }
@@ -800,7 +823,7 @@
     align-items: center;
     gap: 1.5cqw;
     text-decoration: none;
-    color: var(--forest);
+    color: #f7f3e8;
     font-size: 2cqw;
     font-weight: 500;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -988,21 +1011,22 @@
 </section>
 
 <!-- ============ FOLDERS ============ -->
+<!-- ============ FOLDERS ============ -->
 <section class="folders-section" id="folders">
   <div class="scene">
     <!-- Dossier 1 : Développement -->
     <button class="dossier fonce d1 folder-tab" data-target="panel-dev" aria-label="Ouvrir Développement">
-      <span class="onglet">Développement</span>
+      <span class="onglet"><span class="glass-label">Développement</span></span>
     </button>
 
     <!-- Dossier 2 : Création digitale -->
     <button class="dossier clair d2 folder-tab" data-target="panel-creation" aria-label="Ouvrir Création digitale">
-      <span class="onglet">Création digitale</span>
+      <span class="onglet"><span class="glass-label">Création digitale</span></span>
     </button>
 
     <!-- Dossier 3 : Data -->
     <button class="dossier fonce d3 folder-tab" data-target="panel-data" aria-label="Ouvrir Data">
-      <span class="onglet">Data</span>
+      <span class="onglet"><span class="glass-label">Data</span></span>
     </button>
 
     <!-- Dossier 4 : Fond décoratif -->
@@ -1024,7 +1048,6 @@
     <span class="pied">Cliquez sur un dossier pour en découvrir plus</span>
   </div>
 </section>
-
 <!-- ---- Category panel: DATA ---- -->
 <div class="category-panel" id="panel-data">
   <div class="cat-inner">
@@ -1120,14 +1143,14 @@
         <!-- CapCut -->
          <div class="tool-item">
           <div class="tool-icon float-2">
-            <img src="Capcut.png" alt="Capcut" class="tool-logo-img">
+            <img src="Capcut.png" alt="Canva" class="tool-logo-img">
           </div>
           <span class="tool-name">CapCut</span>
         </div>
         <!-- Adobe Premiere Pro -->
         <div class="tool-item">
           <div class="tool-icon float-3">
-            <img src="Premierepro.PNG" alt="Adobe Premiere Pro" class="tool-logo-img">
+            <img src="Premierpro.PNG" alt="Adobe Premiere Pro" class="tool-logo-img">
           </div>
           <span class="tool-name">Adobe Premiere Pro</span>
         </div>
